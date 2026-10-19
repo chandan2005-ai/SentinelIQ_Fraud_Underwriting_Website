@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SentinelIQ — AI-Powered Multi-Insurance Evidence & Risk Decision Support
 
 **IBM Datathon topic:** Real-Time AI for Critical Decisions.
@@ -228,3 +229,6 @@ processing, training, and model inference; it does **not** include PyTorch. Inst
 `requirements.txt` only when you want to train or run the optional image classifier.
 Image uploads still receive image-quality/hash analysis without PyTorch. Scanned image OCR
 still requires the Tesseract executable.
+=======
+# SentinelIQ_Fraud_Underwriting_Website
+>>>>>>> fffa64e63ec110a7b676fa30bea5f18dc4aace3b
