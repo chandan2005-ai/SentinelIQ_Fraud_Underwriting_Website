@@ -1,0 +1,17 @@
+SentinelIQ — Fraud and Underwriting Risk Research Website (v2)
+
+1. Install Python 3.12 (check: py -3.12 --version).
+2. Extract the ZIP into a NEW folder. Preserve your existing runtime/ folder before upgrading.
+3. Open insurance-risk-platform in VS Code.
+4. Run SETUP_WINDOWS.bat from the project root (or double-click it).
+5. Create an administrator account when requested.
+6. Run RUN_WINDOWS.bat, open http://127.0.0.1:8000, and log in.
+7. If needed, go to Admin & audit > Prepare all 14 categories (BOTH model tasks).
+8. Create a case, enter policy start/end, coverage and prior claims; upload a sample PDF.
+9. Confirm extracted fields, Save case, and Run/Re-run analysis.
+10. Fraud and underwriting demo scores are SEPARATE and trained on fictional labels.
+
+Important: Neither score is a real-world insurance probability. Never use this project to accuse, deny, price or approve actual claims or policies.
+Database: runtime/insurance.db. Evidence: runtime/uploads/.
+Underwriting datasets: sample_data/underwriting_*_SYNTHETIC.csv.
+Underwriting custom data must use an independently defined prospective outcome.
