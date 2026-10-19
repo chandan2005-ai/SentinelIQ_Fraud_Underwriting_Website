@@ -1,0 +1,21 @@
+# Free synthetic-data-only PREVIEW. No persistent SQLite/uploads on the free tier.
+# For real persistent use, deploy a paid instance with a mounted disk and
+# set DATA_DIR=/var/data and DATABASE_URL=sqlite:////var/data/insurance.db.
+services:
+  - type: web
+    name: sentineliq-fraud-underwriting
+    runtime: python
+    plan: free
+    autoDeployTrigger: commit
+    healthCheckPath: /api/health
+    buildCommand: pip install -r requirements-core.txt && python scripts/prepare_demo_models.py --all
+    startCommand: python -m alembic -c backend/alembic.ini upgrade head && python scripts/cloud_bootstrap.py && python -m uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: JWT_SECRET
+        generateValue: true
+      - key: BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
